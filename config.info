@@ -1,0 +1,8 @@
+vsftpd_config_file=Configuration file,8
+vsftpd_pid_file=PID file,8
+vsftpd_cmd_restart=Restart command,0
+vsftpd_cmd_stop=Stop command,0
+vsftpd_cmd_start=Start command,0
+vsftpd_path=Path to vsftpd,8
+cmd_dbload=Path to db_load,8
+pam_service_dir=Pam service directory,7

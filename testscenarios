@@ -1,0 +1,44 @@
+Setting up the test environment
+
+
+remove all currently installed vsftpd modules from webmin
+apt-get install --reinstall vsftpd (force the configuration to default)
+
+
+Test 1. Installing the module 
+Action: install the module
+Result: module should show up under servers
+Status: OK
+
+Test 2. Testing install_check.pl
+Action: change configuration of vsftpd config file to point to non-existing file
+        refresh webmin page
+Result: module should show up under disabled modules
+Status: OK
+
+Test 3. Setting up an anoymous server
+Action: select the anonymous profile (make sure the anonymous user is existing)
+        restart the server
+        try to log in as anonymous
+Result: be able to log in
+Status: OK
+
+Test 4. Virtual users
+Action: select the virtual users options (make sure the virtual user exists)
+        add some virtual users and persist the file
+        restart the server
+        try to login as a virtual user
+Result: be able to log in
+Status: OK (after changing virtual user) 
+
+Test 5. Check if all options are saved
+Action: enable all boolean options in the basic profile and save
+        do the same for advanced profile
+Result: both sets of options should be enabled
+Status: OK
+
+
+BUGS:
+- pasv_address giving error in help (fixed)
+- config_listen_ipv6 no text (fixed)
+- pam.d revert doesn't work (fixed)

@@ -1,0 +1,4 @@
+name=vsftpd
+desc=vsftpd
+category=servers
+syslog=1
