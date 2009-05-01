@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 
-# ddclient Webmin module, $Date: 2009-04-28
+# vsftpd Webmin module, $Date: 2009-04-30
 # Copyright (C) 2009 MagicWave Systems
 #
 # This program is free software; you can redistribute it and/or

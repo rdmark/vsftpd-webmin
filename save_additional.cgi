@@ -5,5 +5,5 @@ require "libvsftpdconfig/vsftpd-lib.pl";
 
 use libvsftpdconfig::HtmlUIController;
 
-my $redirect = HtmlUIController::handle_line_config_save($main::files);
+my $redirect = HtmlUIController::handle_line_config_save($files);
 redirect($redirect);

@@ -33,7 +33,7 @@ else {
 			my $instance = ConfigManager::instance()->config_instance($feat);
 			$instance->value($option[1]{$feat} ? $option[1]{$feat} : $instance->type()->value_default()); 
 			
-			print "<div>" . $main::text{"select_profile_" . $option[0] . "_" . $feat} . ": " .
+			print "<div>" . $text{"select_profile_" . $option[0] . "_" . $feat} . ": " .
 				HtmlUICreator::render_config_instance($feat, 7) . "</div>";
 		}
 		

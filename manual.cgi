@@ -3,7 +3,8 @@
 require "libvsftpdconfig/vsftpd-lib.pl";
 
 use strict;
-use vars qw(%text $tabs);
+
+use vars qw/%text $tabs %in/;
 use libvsftpdconfig::HtmlUICreator;
 use libvsftpdconfig::ConfigManager;
 use libvsftpdconfig::Util;
@@ -142,14 +143,14 @@ our $tabs = [
 
 my @perms = (['basic', 1], ['advanced', 2], ['manual', 4]); 
 
-main::ui_print_header(undef, $text{'manual_title'}, "", "manual", 1, 1);
+ui_print_header(undef, $text{'manual_title'}, "", "manual", 1, 1);
 
-print main::text('manual_show_options');
+print text('manual_show_options');
 
-if (exists $main::in{'error'}) {
+if (exists $in{'error'}) {
 	print '<div style="color: red; font-weight: bold;">';
 		
-	my $error = $main::in{'error'};
+	my $error = $in{'error'};
 	
 	if ($error eq "error_save") {
 		error_setup($text{'manual_error_save'});
@@ -167,15 +168,15 @@ my @perm_opts;
 my $permission = HtmlUICreator::get_permission();
 my $conf_permission = Util::get_permission();
 
-print main::ui_form_start('manual.cgi', 'post');
+print ui_form_start('manual.cgi', 'post');
 foreach my $opt (@perms) {
 	if ($opt->[1] & $conf_permission) {
-		push @perm_opts, [$opt->[1], $main::text{'manual_show_option_' . $opt->[0]}];
+		push @perm_opts, [$opt->[1], $text{'manual_show_option_' . $opt->[0]}];
 	}
 }
-print main::ui_radio('permission', $permission , \@perm_opts);
-print main::ui_form_end([ ['select', $main::text{'manual_select_option'}] ]);
+print ui_radio('permission', $permission , \@perm_opts);
+print ui_form_end([ ['select', $text{'manual_select_option'}] ]);
 
 print HtmlUICreator::render_tabs($tabs, "logging");
 
-main::ui_print_footer(undef, $text{'index_title'});
+ui_print_footer(undef, $text{'index_title'});

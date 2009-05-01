@@ -19,10 +19,11 @@ dest_dir=`echo $HOME`
 
 stamp=`date +%Y-%m-%d-%H%M`
 
-files="*.cgi *.pl *.info help/ images/ lang/ config-* defaultacl"
+#files="*.cgi *.pl *.info help/ images/ lang/ config-* defaultacl"
+files="*"
 
-mkdir ${name}/
-cp -r ${files} ${name}/
+mkdir ../${name}/
+cp -r ${files} ../${name}/
 #tar -zcf ../tars/${name}-${stamp}.wbm.gz ${name}
-tar -zcf ${dest_dir}/${name}-${stamp}.wbm.gz ${name}
-rm -rf ${name} 
+tar -zcf ${dest_dir}/${name}-${stamp}.wbm.gz ../${name}
+rm -rf ../${name} 
