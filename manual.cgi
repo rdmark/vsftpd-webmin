@@ -12,7 +12,7 @@ use libvsftpdconfig::Util;
 our $tabs = [
 	['logging',
 	[
-		{'title'=>'general'},
+		{'title'=>'logs'},
 		'dual_log_enable',
 		'xferlog_enable',
 		'xferlog_file',
@@ -24,7 +24,7 @@ our $tabs = [
 	]], 
 	['server_port_ip_nic',
 	[
-		{'title'=>'general'},
+		{'title'=>'server'},
 		'accept_timeout',
 		'anon_max_rate',
 		'connect_timeout',
@@ -65,7 +65,7 @@ our $tabs = [
 	]],
 	['site_and_transfer_features',
 	[
-		{'title'=>'general'},
+		{'title'=>'transfers'},
 		'dirlist_enable',
 		'download_enable',
 		'anon_world_readable_only',
@@ -105,7 +105,7 @@ our $tabs = [
 	]], 
 	['users_logins',
 	[
-		{'title'=>'general'},
+		{'title'=>'users'},
 		'anonymous_enable',
 		'chroot_list_enable',
 		'chroot_local_user',

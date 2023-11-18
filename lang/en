@@ -59,6 +59,9 @@ tab_sub_title_userlist=User list
 tab_sub_title_passive=PASV FTP support (passive ftp)
 tab_sub_title_port=PORT FTP support
 tab_sub_title_ssl=Secure connection (SSL)
+tab_sub_title_server=Server
+tab_sub_title_transfers=Transfers
+tab_sub_title_users=Users
 
 config_allow_anon_ssl=Allow SSL
 config_anon_mkdir_write_enable=Allow creating new directories 
