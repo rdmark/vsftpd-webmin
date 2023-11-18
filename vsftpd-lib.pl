@@ -1,4 +1,14 @@
-BEGIN { push(@INC, ".."); };
+BEGIN {
+	push(@INC, "..");
+	$DEBUG = 0;
+	if ($DEBUG) {
+		use warnings;
+		use CGI::Carp qw(carpout);
+		open(ERROR_LOG, ">>/tmp/webmin_vsftpd_error_log")
+			or die("Can't setup error log: $!\n");
+		carpout(\*ERROR_LOG);
+	}
+};
 use WebminCore;
 
 init_config();
