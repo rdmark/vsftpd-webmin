@@ -1,4 +1,4 @@
 name=vsftpd
-desc=vsftpd
+desc=Very Secure FTP Server
 category=servers
-syslog=1
+os_support=*-linux freebsd openbsd netbsd solaris
