@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 
-do "libvsftpdconfig/vsftpd-lib.pl";
+do "vsftpd-lib.pl";
 
 use libvsftpdconfig::DocReader;
 

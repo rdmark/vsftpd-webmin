@@ -1,7 +1,7 @@
 #!/usr/bin/perl
 
 do "additional_config_options.pl";
-require "libvsftpdconfig/vsftpd-lib.pl";
+require "vsftpd-lib.pl";
 
 use libvsftpdconfig::HtmlUIController;
 

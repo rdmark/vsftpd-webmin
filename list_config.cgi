@@ -2,7 +2,7 @@
 
 require "../ui-lib.pl";
 require "../web-lib.pl";
-require "libvsftpdconfig/vsftpd-lib.pl";
+require "vsftpd-lib.pl";
 
 use strict;
 use libvsftpdconfig::ConfigManager;

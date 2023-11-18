@@ -22,7 +22,7 @@ use vars qw(%text $tabs %config);
 use libvsftpdconfig::ConfigManager;
 use libvsftpdconfig::Util;
 
-require "libvsftpdconfig/vsftpd-lib.pl";
+require "vsftpd-lib.pl";
 
 
 my $permission = Util::get_permission();

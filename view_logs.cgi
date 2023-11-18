@@ -3,7 +3,7 @@
 # bs: copied this for the biggest part from the syslog-ng module
 # Show a log file, 
 
-require 'libvsftpdconfig/vsftpd-lib.pl';
+require 'vsftpd-lib.pl';
 
 use libvsftpdconfig::ConfigManager;
 

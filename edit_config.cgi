@@ -3,7 +3,7 @@
 
 use libvsftpdconfig::Util;
 
-require "libvsftpdconfig/vsftpd-lib.pl";
+require "vsftpd-lib.pl";
 
 use strict;
 use vars qw(%text %in $data %config);

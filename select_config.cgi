@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 
-require "libvsftpdconfig/vsftpd-lib.pl";
+require "vsftpd-lib.pl";
 
 use libvsftpdconfig::HtmlUICreator;
 use libvsftpdconfig::ConfigManager;

@@ -4,7 +4,7 @@ do "additional_config_options.pl";
 
 use strict;
 use vars qw(%text %in $files);
-require "libvsftpdconfig/vsftpd-lib.pl";
+require "vsftpd-lib.pl";
 
 use libvsftpdconfig::HtmlUICreator;
 
