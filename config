@@ -3,5 +3,5 @@ vsftpd_cmd_restart=systemctl restart vsftpd
 vsftpd_cmd_stop=systemctl stop vsftpd
 vsftpd_cmd_start=systemctl start vsftpd
 vsftpd_path=/usr/sbin/vsftpd
-cmd_dbload=db4.2_load
+cmd_dbload=/usr/bin/db5.3_load
 pam_service_dir=/etc/pam.d/
