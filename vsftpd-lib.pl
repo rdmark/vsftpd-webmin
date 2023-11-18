@@ -9,7 +9,7 @@ ReadParse();
 @EXPORT = qw($tabs);
 
 sub get_vsftpd_pid() {
-	return check_pid_file($config{'vsftpd_pid_file'});
+	return find_byname($config{'vsftpd_path'});
 }
 
 sub stop() {

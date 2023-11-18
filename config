@@ -1,5 +1,4 @@
 vsftpd_config_file=/etc/vsftpd.conf
-vsftpd_pid_file=/var/run/vsftpd/vsftpd.pid
 vsftpd_cmd_restart=systemctl restart vsftpd
 vsftpd_cmd_stop=systemctl stop vsftpd
 vsftpd_cmd_start=systemctl start vsftpd

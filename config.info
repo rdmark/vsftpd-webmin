@@ -1,5 +1,4 @@
 vsftpd_config_file=Configuration file,8
-vsftpd_pid_file=PID file,8
 vsftpd_cmd_restart=Restart command,0
 vsftpd_cmd_stop=Stop command,0
 vsftpd_cmd_start=Start command,0
