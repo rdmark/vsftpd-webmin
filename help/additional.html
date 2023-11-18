@@ -1,0 +1,20 @@
+<header>External configuration files</header>
+This page allows you to manage additional configuration files that are referenced
+from the main vsftpd configuration. The following files can be managed:
+
+<ul>
+	<li>Virtual users file: manages the virtual user accounts. Note: the accounts
+	are only really removed or added after you pressed 'persist pending changes'.
+	</li>
+	<li>Allowed/Denied users list: the local users that are denied or allowed to
+	login. The behavior depends on the configuration option "Deny users access 
+	by default except in list". When enabled the listed users are allowed to 
+	login otherwise they are denied. (only enforced if option is enabled)</li>
+	<li>Banned email lists: these email addresses are banned from being used
+	for anonymous passwords (only enforced if option is enabled) </li>
+	<li>Restricted users list: the local users in this list are restricted to
+	their own home directory, or are allowed to leave their home directory 
+	(behavior depends on settings the main configuration file)</li>
+	<li>Allowed email addresses list: only these email addresses are accepted
+	for anonymous password (only enforced if option is enabled)</li>
+</ul>

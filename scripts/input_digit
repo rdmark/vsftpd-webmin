@@ -1,0 +1,125 @@
+<DT><B>accept_timeout</B>
+
+<DD>
+The timeout, in seconds, for a remote client to establish connection with
+a PASV style data connection.
+<P>
+Default: 60
+<DT><B>anon_max_rate</B>
+
+<DD>
+The maximum data transfer rate permitted, in bytes per second, for anonymous
+clients.
+<P>
+
+Default: 0 (unlimited)
+<DT><B>anon_umask</B>
+
+<DD>
+The value that the umask for file creation is set to for anonymous users. NOTE! If you want to specify octal values, remember the &quot;0&quot; prefix otherwise the
+value will be treated as a base 10 integer!
+<P>
+Default: 077
+<DT><B>connect_timeout</B>
+
+<DD>
+The timeout, in seconds, for a remote client to respond to our PORT style
+data connection.
+<P>
+
+Default: 60
+<DT><B>data_connection_timeout</B>
+
+<DD>
+The timeout, in seconds, which is roughly the maximum time we permit data
+transfers to stall for with no progress. If the timeout triggers, the remote
+client is kicked off.
+<P>
+Default: 300
+<DT><B>file_open_mode</B>
+
+<DD>
+The permissions with which uploaded files are created. Umasks are applied
+on top of this value. You may wish to change to 0777 if you want uploaded
+files to be executable.
+<P>
+Default: 0666
+<DT><B>ftp_data_port</B>
+
+<DD>
+The port from which PORT style connections originate (as long as the poorly
+named
+<B>connect_from_port_20</B>
+
+is enabled).
+<P>
+Default: 20
+<DT><B>idle_session_timeout</B>
+
+<DD>
+The timeout, in seconds, which is the maximum time a remote client may spend
+between FTP commands. If the timeout triggers, the remote client is kicked
+off.
+<P>
+Default: 300
+<DT><B>listen_port</B>
+
+<DD>
+If vsftpd is in standalone mode, this is the port it will listen on for
+incoming FTP connections.
+<P>
+Default: 21
+<DT><B>local_max_rate</B>
+
+<DD>
+The maximum data transfer rate permitted, in bytes per second, for local
+authenticated users.
+<P>
+Default: 0 (unlimited)
+<DT><B>local_umask</B>
+
+<DD>
+The value that the umask for file creation is set to for local users. NOTE! If
+you want to specify octal values, remember the &quot;0&quot; prefix otherwise the value
+will be treated as a base 10 integer!
+
+<P>
+Default: 077
+<DT><B>max_clients</B>
+
+<DD>
+If vsftpd is in standalone mode, this is the maximum number of clients which
+may be connected. Any additional clients connecting will get an error message.
+<P>
+Default: 0 (unlimited)
+<DT><B>max_per_ip</B>
+
+<DD>
+If vsftpd is in standalone mode, this is the maximum number of clients which
+may be connected from the same source internet address. A client will get an
+error message if they go over this limit.
+<P>
+Default: 0 (unlimited)
+<DT><B>pasv_max_port</B>
+
+<DD>
+The maximum port to allocate for PASV style data connections. Can be used to
+specify a narrow port range to assist firewalling.
+<P>
+Default: 0 (use any port)
+<DT><B>pasv_min_port</B>
+
+<DD>
+The minimum port to allocate for PASV style data connections. Can be used to
+specify a narrow port range to assist firewalling.
+<P>
+Default: 0 (use any port)
+<DT><B>trans_chunk_size</B>
+
+<DD>
+You probably don't want to change this, but try setting it to something like
+8192 for a much smoother bandwidth limiter.
+
+<P>
+Default: 0 (let vsftpd pick a sensible setting)
+<P>

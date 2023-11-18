@@ -1,7 +1,9 @@
 package Util;
 
+use WebminCore;
+
 sub get_permission() {
-	my %access = main::get_module_acl();
+	my %access = get_module_acl();
 	
 	my $permission = $access{'permission'};
 	if (!$permission) {

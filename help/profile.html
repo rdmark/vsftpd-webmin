@@ -1,0 +1,17 @@
+<header>vsftpd configuration profile</header>
+These profiles allow for quick configuration of your vsftpd server, each profile
+is targeted at a particular service type. When you selected a profile you can
+fine-tune the profile by going to the manual configuration page.
+
+<ul>
+	<li>Standalone anonymous read-only service: vsftpd will not be started from
+	inetd but will manage its own connections. Anonymous read-only is enabled,
+	the root of the anonymous file area is configured to the home directory of 
+	the user 'ftp'.</li>
+	<li>Standalone virtual users: vsftpd will not be started from
+	inetd but will manage its own connections and allows virtual users. All 
+	virtual users are mapped to a UNIX user account called 'virtual' (make sure
+	this account exists), the home directory of this user is the root of the file
+	area.
+</ul>
+<hr>

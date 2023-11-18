@@ -1,0 +1,326 @@
+<DT><B>anon_root</B>
+
+<DD>
+This option represents a directory which vsftpd will try to change into
+after an anonymous login. Failure is silently ignored.
+<P>
+
+Default: (none)
+<DT><B>banned_email_file</B>
+
+<DD>
+This option is the name of a file containing a list of anonymous e-mail
+passwords which are not permitted. This file is consulted if the option
+<B>deny_email_enable</B>
+
+is enabled.
+<P>
+Default: /etc/vsftpd.banned_emails
+<DT><B>banner_file</B>
+
+<DD>
+This option is the name of a file containing text to display when someone
+connects to the server. If set, it overrides the banner string provided by
+the
+
+<B>ftpd_banner</B>
+
+option.
+<P>
+Default: (none)
+<DT><B>chown_username</B>
+
+<DD>
+This is the name of the user who is given ownership of anonymously uploaded
+files. This option is only relevant if another option,
+<B>chown_uploads</B>,
+
+is set.
+<P>
+Default: root
+<DT><B>chroot_list_file</B>
+
+<DD>
+The option is the name of a file containing a list of local users which
+will be placed in a chroot() jail in their home directory. This option is
+only relevant if the option
+<B>chroot_list_enable</B>
+
+is enabled. If the option
+<B>chroot_local_user</B>
+
+is enabled, then the list file becomes a list of users to NOT place in a
+chroot() jail.
+<P>
+Default: /etc/vsftpd.chroot_list
+<DT><B>cmds_allowed</B>
+
+<DD>
+
+This options specifies a comma separated list of allowed FTP commands (post
+login. USER, PASS and QUIT are always allowed pre-login). Other
+commands are rejected. This is a powerful method of really locking down an
+FTP server. Example: cmds_allowed=PASV,RETR,QUIT
+<P>
+Default: (none)
+<DT><B>deny_file</B>
+
+<DD>
+This option can be used to set a pattern for filenames (and directory names
+etc.) which should not be accessible in any way. The affected items are not
+hidden, but any attempt to do anything to them (download, change into
+directory, affect something within directory etc.) will be denied. This option
+is very simple, and should not be used for serious access control - the
+filesystem's permissions should be used in preference. However, this option
+may be useful in certain virtual user setups. In particular aware that if
+a filename is accessible by a variety of names (perhaps due to symbolic
+links or hard links), then care must be taken to deny access to all the names.
+Access will be denied to items if their name contains the string given by
+hide_file, or if they match the regular expression specified by hide_file.
+Note that vsftpd's regular expression matching code is a simple implementation
+which is a subset of full regular expression functionality. Because of this,
+you will need to carefully and exhaustively test any application of this
+option. And you are recommended to use filesystem permissions for any
+important security policies due to their greater reliability. Example:
+deny_file={*.mp3,*.mov,.private}
+<P>
+Default: (none)
+<DT><B>dsa_cert_file</B>
+
+<DD>
+This option specifies the location of the DSA certificate to use for SSL
+encrypted connections.
+<P>
+Default: (none - an RSA certificate suffices)
+
+<DT><B>email_password_file</B>
+
+<DD>
+This option can be used to provide an alternate file for usage by the
+<B>secure_email_list_enable</B>
+
+setting.
+<P>
+Default: /etc/vsftpd.email_passwords
+<DT><B>ftp_username</B>
+
+<DD>
+This is the name of the user we use for handling anonymous FTP. The home
+directory of this user is the root of the anonymous FTP area.
+<P>
+
+Default: ftp
+<DT><B>ftpd_banner</B>
+
+<DD>
+This string option allows you to override the greeting banner displayed
+by vsftpd when a connection first comes in.
+<P>
+Default: (none - default vsftpd banner is displayed)
+<DT><B>guest_username</B>
+
+<DD>
+See the boolean setting
+<B>guest_enable</B>
+
+for a description of what constitutes a guest login. This setting is the
+real username which guest users are mapped to.
+
+<P>
+Default: ftp
+<DT><B>hide_file</B>
+
+<DD>
+This option can be used to set a pattern for filenames (and directory names
+etc.) which should be hidden from directory listings. Despite being hidden,
+the files / directories etc. are fully accessible to clients who know what
+names to actually use. Items will be hidden if their names contain the string
+given by hide_file, or if they match the regular expression specified by
+hide_file. Note that vsftpd's regular expression matching code is a simple
+implementation which is a subset of full regular expression functionality.
+Example: hide_file={*.mp3,.hidden,hide*,h?}
+<P>
+Default: (none)
+<DT><B>listen_address</B>
+
+<DD>
+If vsftpd is in standalone mode, the default listen address (of all local
+interfaces) may be overridden by this setting. Provide a numeric IP address.
+<P>
+Default: (none)
+<DT><B>listen_address6</B>
+
+<DD>
+Like listen_address, but specifies a default listen address for the IPv6
+listener (which is used if listen_ipv6 is set). Format is standard IPv6
+address format.
+<P>
+Default: (none)
+<DT><B>local_root</B>
+
+<DD>
+This option represents a directory which vsftpd will try to change into
+after a local (i.e. non-anonymous) login. Failure is silently ignored.
+<P>
+Default: (none)
+<DT><B>message_file</B>
+
+<DD>
+This option is the name of the file we look for when a new directory is
+entered. The contents are displayed to the remote user. This option is
+only relevant if the option
+
+<B>dirmessage_enable</B>
+
+is enabled.
+<P>
+Default: .message
+<DT><B>nopriv_user</B>
+
+<DD>
+This is the name of the user that is used by vsftpd when it wants to be
+totally unprivileged. Note that this should be a dedicated user, rather
+than nobody. The user nobody tends to be used for rather a lot of important
+things on most machines.
+<P>
+Default: nobody
+<DT><B>pam_service_name</B>
+
+<DD>
+
+This string is the name of the PAM service vsftpd will use.
+<P>
+Default: ftp
+<DT><B>pasv_address</B>
+
+<DD>
+Use this option to override the IP address that vsftpd will advertise in
+response to the PASV command. Provide a numeric IP address.
+<P>
+Default: (none - the address is taken from the incoming connected socket)
+<DT><B>rsa_cert_file</B>
+
+<DD>
+This option specifies the location of the RSA certificate to use for SSL
+encrypted connections.
+<P>
+Default: /usr/share/ssl/certs/vsftpd.pem
+
+<DT><B>secure_chroot_dir</B>
+
+<DD>
+This option should be the name of a directory which is empty. Also, the
+directory should not be writable by the ftp user. This directory is used
+as a secure chroot() jail at times vsftpd does not require filesystem access.
+<P>
+Default: /usr/share/empty
+<DT><B>ssl_ciphers</B>
+
+<DD>
+This option can be used to select which SSL ciphers vsftpd will allow for
+encrpyted SSL connections. See the
+<B>ciphers</B>
+
+man page for further details. Note that restricting ciphers can be a useful
+security precaution as it prevents malicious remote parties forcing a cipher
+which they have found problems with.
+<P>
+
+Default: DES-CBC3-SHA
+<DT><B>user_config_dir</B>
+
+<DD>
+This powerful option allows the override of any config option specified in
+the manual page, on a per-user basis. Usage is simple, and is best illustrated
+with an example. If you set
+<B>user_config_dir</B>
+
+to be
+<B>/etc/vsftpd_user_conf</B>
+
+and then log on as the user &quot;chris&quot;, then vsftpd will apply the settings in
+the file
+<B>/etc/vsftpd_user_conf/chris</B>
+
+for the duration of the session. The format of this file is as detailed in
+this manual page! PLEASE NOTE that not all settings are effective on a
+per-user basis. For example, many settings only prior to the user's session
+being started. Examples of settings which will not affect any behviour on
+a per-user basis include listen_address, banner_file, max_per_ip, max_clients,
+xferlog_file, etc.
+<P>
+Default: (none)
+<DT><B>user_sub_token</B>
+
+<DD>
+This option is useful is conjunction with virtual users. It is used to
+automatically generate a home directory for each virtual user, based on a
+template. For example, if the home directory of the real user specified via
+<B>guest_username</B>
+
+is
+<B>/home/virtual/$USER</B>,
+
+and
+<B>user_sub_token</B>
+
+is set to
+<B>$USER</B>,
+
+then when virtual user fred logs in, he will end up (usually chroot()'ed) in
+the directory
+<B>/home/virtual/fred</B>.
+
+This option also takes affect if
+<B>local_root</B>
+
+contains
+<B>user_sub_token</B>.
+
+<P>
+Default: (none)
+<DT><B>userlist_file</B>
+
+<DD>
+This option is the name of the file loaded when the
+<B>userlist_enable</B>
+
+option is active.
+<P>
+Default: /etc/vsftpd.user_list
+<DT><B>vsftpd_log_file</B>
+
+<DD>
+This option is the name of the file to which we write the vsftpd style
+log file. This log is only written if the option
+<B>xferlog_enable</B>
+
+is set, and
+
+<B>xferlog_std_format</B>
+
+is NOT set. Alternatively, it is written if you have set the option
+<B>dual_log_enable</B>.
+
+One further complication - if you have set
+<B>syslog_enable</B>,
+
+then this file is not written and output is sent to the system log instead.
+<P>
+Default: /var/log/vsftpd.log
+<DT><B>xferlog_file</B>
+
+<DD>
+This option is the name of the file to which we write the wu-ftpd style
+transfer log. The transfer log is only written if the option
+<B>xferlog_enable</B>
+
+is set, along with
+<B>xferlog_std_format</B>.
+
+Alternatively, it is written if you have set the option
+<B>dual_log_enable</B>.
+
+<P>
+Default: /var/log/xferlog
+<P>

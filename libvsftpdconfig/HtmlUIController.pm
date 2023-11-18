@@ -1,10 +1,13 @@
 package HtmlUIController;
 
+use WebminCore;
 use libvsftpdconfig::HtmlUICreator;
 use libvsftpdconfig::config::ConfigType;
 use libvsftpdconfig::ConfigManager;
 use libvsftpdconfig::LineConfigManager;
 use libvsftpdconfig::Util;
+
+init_config();
 
 sub handle_persist {
 	my $permission = shift;
@@ -27,14 +30,14 @@ sub handle_persist {
 		}
 						
 		my $value;
-		if (!exists($main::in{$name})) {
+		if (!exists($in{$name})) {
 			# When checkbox is not checked no value is sent
 			if ($element->type()->value_type() == ConfigType::BOOLEAN) {
 				$value = 0;
 			}
 		}
 		else {
-			$value = $main::in{$name};
+			$value = $in{$name};
 		}
 						
 		if (!$element->set_value($value)) {
@@ -50,14 +53,14 @@ sub handle_persist {
 sub handle_save {	
 	my $permission = shift;
 	
-	if (exists $main::in{'rollback'}) {
+	if (exists $in{'rollback'}) {
 		ConfigManager::instance()->rollback();
 		return "manual.cgi?permission=$permission";		
 	}	
-	elsif (exists $main::in{'undo'}) {
+	elsif (exists $in{'undo'}) {
 		return "manual.cgi?permission=$permission";
 	}
-	elsif (exists $main::in{'restore'}) {
+	elsif (exists $in{'restore'}) {
 		ConfigManager::instance()->rollback();		
 		ConfigManager::instance()->rollback("_perm");
 		return "manual.cgi?permission=$permission";
@@ -79,29 +82,29 @@ sub handle_save {
 }
 
 sub handle_line_config_save {
-	my $file = $main::in{'file'};
+	my $file = $in{'file'};
 	my $lines = $file eq 'userdb' ? 2 : 1;
 	my $files = shift;
 	
 	my $manager = LineConfigManager::instance($file);
 	
-	if (exists $main::in{'remove'}) {
-		for my $line (split '\0', $main::in{'remove_line'}) {
+	if (exists $in{'remove'}) {
+		for my $line (split '\0', $in{'remove_line'}) {
 			$manager->remove_lines($line, $lines);
 		}		
 	}
-	elsif (exists $main::in{'add'}) {
+	elsif (exists $in{'add'}) {
 		my @values;
 		for(my $i = 0; $i < $lines; $i++) {
-			push @values, $main::in{'add_' . $i};
+			push @values, $in{'add_' . $i};
 		}
 		
 		$manager->add_lines(@values);		
 	}
-	elsif (exists $main::in{'regenerate'}) {
+	elsif (exists $in{'regenerate'}) {
 		my $error;
 		my $userdb = ConfigManager::instance()->config_instance('userdb')->value();
-		if (!exists $main::config{'cmd_dbload'} || !main::has_command($main::config{'cmd_dbload'})) {
+		if (!exists $config{'cmd_dbload'} || !has_command($config{'cmd_dbload'})) {
 			 $error = 'additional_error_regenerate_cmd';
 		}
 		elsif (!$userdb) {
@@ -116,7 +119,7 @@ sub handle_line_config_save {
 			return "additional_config.cgi?file=$file&error=$error";
 		}		
 	}
-	elsif (exists $main::in{'save'}) {
+	elsif (exists $in{'save'}) {
 		my @instances;
 
 		foreach my $file_opts (@{$files}) {
@@ -153,24 +156,24 @@ sub handle_line_config_save {
 
 sub handle_select_save() {
 	do "libvsftpdconfig/profiles.pl";
-	if (exists $main::in{'profile'}) {
+	if (exists $in{'profile'}) {
 		my %overrides;
 		
 		foreach my $o (@{$ConfigManager::profiles}) {
 			my @option = @{$o};
 			
-			if ($option[0] eq $main::in{'profile'}) {
+			if ($option[0] eq $in{'profile'}) {
 				foreach my $feat (@{$option[2]}) {
-					$overrides{$feat} = $main::in{'value_' . $feat};
+					$overrides{$feat} = $in{'value_' . $feat};
 				}
 			}
 		}
 		
-		my ($name, $value) = ConfigManager::instance()->load_profile($main::in{'profile'}, %overrides);
+		my ($name, $value) = ConfigManager::instance()->load_profile($in{'profile'}, %overrides);
 		
 		# invalid value in one of the overrides 
 		if ($name) {
-			my $error_url = "select_config.cgi?error=error_save&profile=$main::in{'profile'}&reason=error_save_value";
+			my $error_url = "select_config.cgi?error=error_save&profile=$in{'profile'}&reason=error_save_value";
 			$error_url .= "&element=" . $name . "&value=" . $value;			
 			
 			return $error_url;

@@ -1,0 +1,250 @@
+index_title=vsftpd
+index_version=version: 
+manual_title=vsftpd manual configuration
+
+restricted=(restricted)
+
+manual_rollback=Rollback to previous version
+manual_undo=Undo unsaved changes
+manual_save=Save changes
+manual_restore=Restore initial version
+manual_show_option_basic=Basic options
+manual_show_option_advanced=Advanced options
+manual_show_option_manual=Manual options
+manual_select_option=Select
+manual_error_save=Error while saving the configuration 
+
+return_text=Return to index
+
+error_save_value=Error saving configuration
+error_save_value_desc=Invalid value given for
+error_save_write=Can't write configuration to disk, please check configuration and permissions
+
+index_cmd_start=Start
+index_cmd_start_msg=Start server
+index_cmd_restart=Restart
+index_cmd_restart_msg=Restart server
+index_cmd_stop=Stop server
+index_cmd_stop_msg=Stop server (users will be unable to access the ftp server)
+index_cmd_kill=Force termination
+index_cmd_kill_msg=Directly kill the process without using init scripts (process might already be terminated)
+index_status_msg=Server status: $1
+index_status_notlisten=vsftpd is managed from inetd
+index_status_running=running
+index_status_stopped=stopped
+
+index_link_manual=Main configuration
+index_link_additional=External configuration files
+index_link_select=Select profile
+index_link_edit_config=Manual edit config file
+index_link_view_logs=View logs
+
+index_config_invalid=Invalid configuration
+index_config_invalid_msg=Could not find vsftpd binary, please adjust the configuration
+
+index_title_logging=Logging
+index_title_server_port_ip_nic=Server, port, IP, NIC
+index_title_site_and_transfer_features=Site and transfer
+index_title_users_logins=Users, logins
+
+edit_title=Manually edit vsftpd config file
+edit_error=An error occurred while saving the file
+
+tab_sub_title_general=Options
+tab_sub_title_logs=Logging
+tab_sub_title_advanced=Advanced
+tab_sub_title_permissions=Permissions
+tab_sub_title_virtual_users=Virtual users
+tab_sub_title_userlist=User list
+tab_sub_title_passive=PASV FTP support (passive ftp)
+tab_sub_title_port=PORT FTP support
+tab_sub_title_ssl=Secure connection (SSL)
+
+config_allow_anon_ssl=Allow SSL
+config_anon_mkdir_write_enable=Allow creating new directories 
+config_anon_other_write_enable=Allow deleting and renaming
+config_anon_upload_enable=Allow uploading
+config_anon_world_readable_only=Restrict file access
+config_anonymous_enable=Enable anonymous access
+config_ascii_download_enable=Enable ASCII downloads
+config_ascii_upload_enable=Enable ASCII uploads
+config_async_abor_enable=Enable ABOR command
+config_background=Background mode
+config_check_shell=Check for valid shell
+config_chmod_enable=Allow CHMOD command
+config_chown_uploads=Force file owner to
+config_chroot_list_enable=Enable user home directory restrictions
+config_chroot_local_user=Restrict by default except when in list
+config_connect_from_port_20=Support for port 20
+config_deny_email_enable=Deny addresses in banned email list
+config_dirlist_enable=Enable directory listing
+config_dirmessage_enable=Show per directory message upon entering
+config_download_enable=Enable downloads
+config_dual_log_enable=Enable dual log
+config_force_dot_files=Always show dot files
+config_force_local_data_ssl=Require SSL for transmitting data
+config_force_local_logins_ssl=Require SSL for authentication
+config_guest_enable=Remap logins to
+config_hide_ids=Hide file owner and group info
+config_listen=Standalone IPV4 mode
+config_listen_ipv6=Standalone IPV6 mode
+config_local_enable=Allow local users to login
+config_log_ftp_protocol=Log ftp requests and responses
+config_ls_recurse_enable=Allow recursive listing
+config_no_anon_password=Disable password requirement
+config_no_log_lock=Disable file locking
+config_one_process_model=One process per connection
+config_passwd_chroot_enable=Enable per user jail
+config_pasv_enable=Disable PASV
+config_pasv_promiscuous=Disable PASV security check
+config_port_enable=Disable PORT
+config_port_promiscuous=Disable PORT security check
+config_run_as_launching_user=Run as launching user
+config_secure_email_list_enable=Check for allowed email address
+config_session_support=Enable session support
+config_setproctitle_enable=Enable process name information
+config_ssl_enable=Enable SSL
+config_ssl_sslv2=Allow SSLV2
+config_ssl_sslv3=Allow SSLV3
+config_ssl_tlsv1=Allow TLSV1
+config_syslog_enable=Log to syslog only
+config_tcp_wrappers=Enable TCP wrappers
+config_text_userdb_names=Show names of file owners and groups
+config_tilde_user_enable=Enable ~ to point to homedir
+config_use_localtime=Show file times in local timezone
+config_use_sendfile=Enable sendfile
+config_userlist_deny=Allow users access by default except those in list
+config_userlist_enable=Enable user access list
+config_virtual_use_local_privs=Virtual users have equal privileges as local users
+config_write_enable=Enable write commands
+config_xferlog_enable=Enable xfer log
+config_xferlog_std_format=Enable standard xferlog format
+config_accept_timeout=Accept timeout for PASV connection (s)
+config_anon_max_rate=Max data transfer rate (bytes/s)
+config_anon_umask=File umask for file creation
+config_connect_timeout=Accept timeout for PORT connection (s)
+config_data_connection_timeout=Data transfer timeout (s)
+config_file_open_mode=File permissions for uploaded files
+config_ftp_data_port=Originating port for PORT
+config_idle_session_timeout=Session timeout
+config_listen_port=Listen on port
+config_local_max_rate=Max data transfer rate for local users (bytes/s)
+config_local_umask=File umask for local users
+config_max_clients=Maximum number of clients (standalone)
+config_max_per_ip=Maximum number of connections per IP (standalone)
+config_pasv_max_port=Maximum PASV port
+config_pasv_min_port=Minimum PASV port
+config_trans_chunk_size=Chunk size
+config_anon_root=Change to directory after login
+config_banned_email_file=Banned emails list
+config_banner_file=Banner file
+config_chown_username=Change ownership of uploads to
+config_chroot_list_file=Restricted users list
+config_cmds_allowed=Allowed FTP commands
+config_deny_file=Deny files matching pattern
+config_dsa_cert_file=DSA cert. file
+config_email_password_file=Allowed email addresses list
+config_ftp_username=Local username for anonymous ftp access
+config_ftpd_banner=FTP banner
+config_guest_username=Remap logins to
+config_hide_file=Hiden files matching pattern
+config_listen_address=Listen on IP (for IPV4)
+config_listen_address6=Listen on IP (for IPV6)
+config_local_root=Change to directory after local login
+config_message_file=Show file when entering directory
+config_nopriv_user=Unprivileged user
+config_pam_service_name=PAM service name
+config_passv_address=PASV IP address
+config_rsa_cert_file=RSA cert. file
+config_secure_chroot_dir=Secure chroot dir
+config_ssl_ciphers=Enabled SSL chiphers (use dash to seperate)
+config_user_config_dir=Config dir for per user settings
+config_user_sub_token=User token variable
+config_userlist_file=Allowed/Denied users list
+config_vsftpd_log_file=vsftpd log file
+config_xferlog_file=xferlog file
+config_userdb=Virtual users file
+config_pasv_address=IP address for pasv connections
+
+additional_title=vsftpd additional config files
+additional_heading_1_chroot_list_file=Local users restricted/not restricted to homedir 
+additional_heading_1_userdb=Virtual users
+additional_heading_2_userdb=Password
+additional_heading_1_userlist_file=Local users allowed/denied to login
+additional_heading_1_banned_email_file=Banned email addresses
+additional_heading_1_email_file=Allowed email addresses
+additional_remove_selected=Remove selected
+additional_add=Add new
+additional_add_head_0=Name
+additional_add_head_1=Password
+
+additional_error_regenerate_cmd=Path to db_dump tool has not been configured or command not found
+additional_error_regenerate_disabled=Please configure the virtual user file location first
+additional_error=An error occurred
+
+additional_regenerate=Persist pending changes
+additional_select_file=Select file
+
+additional_options=Options
+
+select_title=vsftpd configuration profile
+select_description=Configuration profiles define a set of predefined configuration options. When selecting a profile all current settings will be overwritten and set according to the profile.
+select_profile_virtual_users=Standalone virtual users
+select_profile_virtual_users_guest_username=User account whose home directory is used as the ftp area
+select_profile_stand_alone=Standalone anonymous read-only service
+select_profile_stand_alone_ftp_username=User account whose home directory is used as the ftp area
+select_do=Select profile
+selected_ok=Profile selected
+select_error_save=Error while selecting the profile
+
+log_sec=vsftpd log file
+
+enabled=Enabled
+disabled=Disabled
+
+additional_userdb_location=Virtual users support is not enabled in the configuration
+additional_userlist_enable=The userlist option is currently disabled, all users are allowed to log in
+additional_userlist_deny=Only users in the list will be denied access
+additional_userlist_not_deny=Only users in the list are allowed access
+additional_deny_email_enable=The deny email addresses option is not enabled, all email addresses are accepted
+additional_conflict_secure_email_list_enable=Note: the email password file is currently enabled, only email addresses listed there are allowed
+additional_chroot_list_enable=Local users in this list will be placed in a chroot jail inside their home directory
+additional_chroot_local_user=All local users are currently placed in a chroot jail, except when listed here
+additional_secure_email_list_enable=The secure email list option is not enabled, all email addresses except those in the deny list are accepted
+
+acl_permission_all=all options
+acl_permission_advanced=basic and advanced options
+acl_permission_basic=basic options
+acl_permission=Allow user to edit: 
+
+help_popup_header=vsftpd configuration help
+
+help_userdb=If enabled vsftpd is configured for to authenticate users from a virtual user database. This options changes the pam file of vsftpd to use the 'userdb' pam module for the authentication and account setup. You can manage the contents of this virtual database using the external configuration page by selecting the virtual users file. <br/>To disable virtual users you can leave this field empty.
+help_listen=If enabled, vsftpd will run in standalone mode. This means that vsftpd must not be run from an inetd of some kind. Instead, the vsftpd executable is run once directly. vsftpd itself will then take care of listening for and handling incoming connections.
+
+view_logs_title=View vsftpd logs 
+view_logs_submit=View
+view_logs_vsftpd_log_file=vsftpd log file
+view_logs_xferlog_file=xferlog
+view_logs_lines=Show lines: 
+view_logs_file=Log file: 
+view_logs_filter=Filter: 
+view_logs_empty=File is empty
+
+webmin_log_regenerate=Saved virtual user db file
+webmin_log_loadprofile=Load config profile $1
+webmin_log_lineconfig=Changed $1
+webmin_log_mainconfig=Main configuration file
+webmin_log_persist=Changed $1
+webmin_log_rollback=Rolled back main configuration file to $1 version
+webmin_log_rollback_oneversion=previous
+webmin_log_rollback__perm=initial
+webmin_log_manual=Manually edited main configuration file
+webmin_log_cmd_start=Started the server
+webmin_log_cmd_restart=Restarted the server
+webmin_log_cmd_stop=Stopped the server
+webmin_log_cmd_kill=Killed the server
+
+error_save_value=Invalid value given for option "$2": $1
+error_save_value_username=Invalid value given for option "$1": no account with username $2 exists. You can create the account using the webmin user config module.
+error_save_write=Error while writing configuration file, please check the log.
