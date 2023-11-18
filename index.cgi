@@ -36,8 +36,6 @@ if (!has_command($config{'vsftpd_path'})) {
 	exit;
 }
 
-print generate_icon('images/magic_wave.jpeg', '', 'http://www.magicwave-sys.com/');
-
 my @links = ('manual.cgi?permission=1', 'additional_config.cgi', 'view_logs.cgi?file=vsftpd_log_file'); 
 my @names = ($text{'index_link_manual'}, $text{'index_link_additional'}, $text{'index_link_view_logs'});
 my @images = ('images/index_manual.png', 'images/misc.gif.png', 'images/log.png');
