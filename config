@@ -1,8 +1,8 @@
 vsftpd_config_file=/etc/vsftpd.conf
 vsftpd_pid_file=/var/run/vsftpd/vsftpd.pid
-vsftpd_cmd_restart=/etc/init.d/vsftpd restart
-vsftpd_cmd_stop=/etc/init.d/vsftpd stop
-vsftpd_cmd_start=/etc/init.d/vsftpd start
+vsftpd_cmd_restart=systemctl restart vsftpd
+vsftpd_cmd_stop=systemctl stop vsftpd
+vsftpd_cmd_start=systemctl start vsftpd
 vsftpd_path=/usr/sbin/vsftpd
 cmd_dbload=db4.2_load
 pam_service_dir=/etc/pam.d/
