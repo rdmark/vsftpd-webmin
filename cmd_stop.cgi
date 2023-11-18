@@ -2,5 +2,5 @@
 
 require "vsftpd-lib.pl";
 
-vsftpd_lib::stop();
+stop();
 redirect("");

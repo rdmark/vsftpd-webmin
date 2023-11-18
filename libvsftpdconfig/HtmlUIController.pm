@@ -111,7 +111,7 @@ sub handle_line_config_save {
 			$error = 'additional_error_regenerate_disabled';
 		}
 		else {
-			vsftpd_lib::userdb_regenerate($userdb);
+			userdb_regenerate($userdb);
 		}
 		
 		
