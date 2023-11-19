@@ -1,5 +1,5 @@
-index_title=vsftpd
-index_version=version: 
+index_title=Very Secure FTP Server
+index_version=vsftpd version:
 manual_title=vsftpd manual configuration
 
 restricted=(restricted)

@@ -27,7 +27,7 @@ require "vsftpd-lib.pl";
 
 my $permission = Util::get_permission();
 
-ui_print_header($text{'index_version'} . version(), $text{'index_title'}, "", "intro", 1, 1);
+ui_print_header($text{'index_version'} . " " . version(), $text{'index_title'}, "", "intro", 1, 1);
 
 if (!has_command($config{'vsftpd_path'})) {
 	error_setup($text{'index_config_invalid'});
