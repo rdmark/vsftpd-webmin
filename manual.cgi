@@ -179,4 +179,4 @@ print ui_form_end([ ['select', $text{'manual_select_option'}] ]);
 
 print HtmlUICreator::render_tabs($tabs, "logging");
 
-ui_print_footer(undef, $text{'index_title'});
+ui_print_footer(undef, $text{'return_text'});

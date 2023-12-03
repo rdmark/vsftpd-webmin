@@ -88,4 +88,4 @@ else {
 print "<i>$text{'view_logs_empty'}</i>\n" if (!$got);
 print "</pre>\n";
 
-ui_print_footer("", $text{'return_text'});
+ui_print_footer(undef, $text{'return_text'});

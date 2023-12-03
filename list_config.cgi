@@ -19,4 +19,4 @@ foreach my $element (@vsftpd_config) {
 }
 
 print ui_table_end();
-print ui_print_footer();
+ui_print_footer(undef, $text{'return_text'});

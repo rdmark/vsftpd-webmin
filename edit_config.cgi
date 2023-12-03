@@ -21,4 +21,4 @@ my $data = read_file_contents($config{'vsftpd_config_file'});
 print ui_textarea("data", $data, 20, 80),"\n";
 print ui_form_end([ [ "save", $text{'save'} ] ]);
 
-ui_print_footer(undef, $text{'index_title'});
+ui_print_footer(undef, $text{'return_text'});

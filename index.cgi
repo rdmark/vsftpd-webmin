@@ -81,7 +81,3 @@ if ($standalone) {
 print ui_buttons_row("cmd_kill.cgi", $text{'index_cmd_kill'}, $text{'index_cmd_kill_msg'});
 
 print ui_buttons_end();
-
-
-
-print ui_print_footer("/", $text{"index_title"});

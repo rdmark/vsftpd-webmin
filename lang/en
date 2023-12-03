@@ -14,7 +14,7 @@ manual_show_option_manual=Manual options
 manual_select_option=Select
 manual_error_save=Error while saving the configuration 
 
-return_text=Return to index
+return_text=module index
 
 error_save_value=Error saving configuration
 error_save_value_desc=Invalid value given for

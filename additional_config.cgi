@@ -29,4 +29,4 @@ if (exists $in{'file'}) {
 	print HtmlUICreator::render_line_config_file($in{'file'}, $conflicts, $add_opts);
 }
 
-ui_print_footer(undef, text('index_title'));
+ui_print_footer(undef, $text{'return_text'});

@@ -43,4 +43,4 @@ else {
 	print ui_form_end([['select', $text{'select_do'}]]);
 }
 
-ui_print_footer(undef, $text{'index_title'});
+ui_print_footer(undef, $text{'return_text'});
