@@ -1,29 +1,25 @@
 #!/bin/bash
 
-if [ -z "${1}" ]; then
+if [[ "${1}" == "-?" ]] || [[ "${1}" == "-h" ]] || [[ "${1}" == "--help" ]]; then
   echo
-  echo "Usage:  ${0} [ your module name ]"
+  echo "Usage:  ${0}"
   echo
   echo "Gathers Webmin module cgi scripts and other required module files in this directory and"
   echo "packs them into a Webmin module tar package with the name and a date/ time stamp."
-  echo "The resulting wbm package is saved into your home directory"
+  echo "The resulting wbm package is saved into the current directory."
   echo
   exit 1
 fi
 
+set -e
 
-#name='ddclient'
-name=$1
-
-dest_dir=`echo $HOME`
+name="vsftpd"
 
 stamp=`date +%Y-%m-%d-%H%M`
 
-#files="*.cgi *.pl *.info help/ images/ lang/ config-* defaultacl"
-files="*"
+files="*.cgi *.pl *.info docs/ help/ images/ lang/ libvsftpdconfig/ COPYING config defaultacl vsftpd_pam_d_template"
 
-mkdir ../${name}/
-cp -r ${files} ../${name}/
-#tar -zcf ../tars/${name}-${stamp}.wbm.gz ${name}
-tar -zcf ${dest_dir}/${name}-${stamp}.wbm.gz ../${name}
-rm -rf ../${name} 
+mkdir ./${name}
+cp -r ${files} ./${name}/
+tar -zcf ./${name}-${stamp}.wbm.gz ./${name}
+rm -rf ./${name} 

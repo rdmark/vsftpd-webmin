@@ -7,7 +7,9 @@ vsftpd Webmin Module - [forked from SourceForge](https://sourceforge.net/project
 Clone this repository locally, and run the make_tar.sh shell script.
 
 ```
-./make_tar.sh vsftpd
+./make_tar.sh
 ```
 
-A release tarball will be created in your home dir. Install the module via the tarball with Webmin's install_module.pl script, or using the Webmin webapp.
+A release tarball will be created in the current directory.
+
+Install the module via the tarball with Webmin's install_module.pl script, or using the Webmin webapp.
