@@ -14,12 +14,14 @@ fi
 set -e
 
 name="vsftpd"
-
-stamp=`date +%Y-%m-%d-%H%M`
+stamp=`date +%Y-%m-%d`
+tarball="$name-$stamp.wbm.gz"
 
 files="*.cgi *.pl *.info docs/ help/ images/ lang/ libvsftpdconfig/ COPYING config defaultacl vsftpd_pam_d_template"
 
+echo "Creating distribution tarball $tarball ..."
+
 mkdir ./${name}
 cp -r ${files} ./${name}/
-tar -zcf ./${name}-${stamp}.wbm.gz ./${name}
+tar -zcf ./${tarball} ./${name}
 rm -rf ./${name} 
