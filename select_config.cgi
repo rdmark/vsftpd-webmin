@@ -5,6 +5,8 @@ require "vsftpd-lib.pl";
 use libvsftpdconfig::HtmlUICreator;
 use libvsftpdconfig::ConfigManager;
 
+&ReadParse();
+
 ui_print_header(undef, $text{'select_title'}, "", "profile", 1, 1);
 
 if (exists $in{'selected'}) {

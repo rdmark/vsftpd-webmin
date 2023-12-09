@@ -4,6 +4,8 @@ require "vsftpd-lib.pl";
 
 use strict;
 
+&ReadParse();
+
 use vars qw/%text $tabs %in/;
 use libvsftpdconfig::HtmlUICreator;
 use libvsftpdconfig::ConfigManager;

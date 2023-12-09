@@ -8,6 +8,8 @@ require "vsftpd-lib.pl";
 
 use libvsftpdconfig::HtmlUICreator;
 
+&ReadParse();
+
 # [ [option, textname, [conflicting options], enable option, location option], ... ]
 
 ui_print_header(undef, text('additional_title'), "", "additional", 1, 1);

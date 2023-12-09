@@ -5,6 +5,8 @@ use libvsftpdconfig::Util;
 
 require "vsftpd-lib.pl";
 
+&ReadParse();
+
 use strict;
 use vars qw(%text %in $data %config);
 

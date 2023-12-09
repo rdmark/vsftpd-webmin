@@ -12,7 +12,6 @@ BEGIN {
 use WebminCore;
 
 init_config();
-ReadParse();
 
 %access = get_module_acl();
 

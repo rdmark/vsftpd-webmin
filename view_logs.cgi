@@ -9,6 +9,8 @@ use libvsftpdconfig::ConfigManager;
 
 &foreign_require("proc", "proc-lib.pl");
 
+&ReadParse();
+
 # Work out the file
 my $file_selected = $in{'file'};
 
