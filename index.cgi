@@ -46,7 +46,7 @@ if ($permission == 7) {
 	push @images, 'images/kernel.gif.png', 'images/manual.gif.png';
 }
 
-print icons_table(\@links, \@names, \@images);
+icons_table(\@links, \@names, \@images);
 
 print ui_hr();
 
