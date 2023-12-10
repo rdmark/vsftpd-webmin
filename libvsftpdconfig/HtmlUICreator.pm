@@ -99,13 +99,13 @@ sub render_tabs($$) {
 	warn("restrictions: " . $access{'restricted'});
 
 	my $ret = render_js_popup_start();
+	$ret .= ui_form_start('save.cgi', 'post');
 	$ret .= ui_tabs_start([
 		map { [ @{$_}[0], $text{'index_title_'.@{$_}[0]}, "index.cgi?tabname=" . @{$_}[0] ] } @tabs ],
 		"tabname",
 		$in{'tabname'} || $default,
 		1);
 
-	$ret .= ui_form_start('save.cgi', 'post');
 	$ret .= ui_hidden('permission', $permission);
 
 	foreach my $tab (@tabs) {
@@ -124,8 +124,8 @@ sub render_tabs($$) {
 	push @buttons, ["undo", $text{'manual_undo'}],
 				   ["submit", $text{'manual_save'}];
 
-	$ret .= ui_form_end(\@buttons);
 	$ret .= ui_tabs_end();
+	$ret .= ui_form_end(\@buttons);
 
 	return $ret;
 }
