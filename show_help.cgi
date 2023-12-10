@@ -4,6 +4,8 @@ do "vsftpd-lib.pl";
 
 use libvsftpdconfig::DocReader;
 
+&ReadParse();
+
 my $subject = $in{'subject'};
 popup_header($text{'help_popup_header'});
 print ui_subheading($text{'config_' . $subject});
