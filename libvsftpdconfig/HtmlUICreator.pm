@@ -89,9 +89,9 @@ sub render_config_instance_row {
 	return ui_table_row($name, $widgets, 2, ['width=30%']);
 }
 
-sub render_tabs($$) {
-	my $tab_ref = shift;
-	my @tabs = @{$tab_ref};
+sub render_sections($$) {
+	my $section_ref = shift;
+	my @sections = @{$section_ref};
 	my $default = shift;
 
 	my $permission = get_permission();
@@ -99,18 +99,13 @@ sub render_tabs($$) {
 	warn("restrictions: " . $access{'restricted'});
 
 	my $ret = render_js_popup_start();
-	$ret .= ui_tabs_start([
-		map { [ @{$_}[0], $text{'index_title_'.@{$_}[0]}, "index.cgi?tabname=" . @{$_}[0] ] } @tabs ],
-		"tabname",
-		$in{'tabname'} || $default,
-		1);
 
 	$ret .= ui_form_start('save.cgi', 'post');
 	$ret .= ui_hidden('permission', $permission);
 
-	foreach my $tab (@tabs) {
-		my @tab = @{$tab};
-		$ret .= render_tab($tab[1], $tab[0], $permission);
+	foreach my $section (@sections) {
+		my @section = @{$section};
+		$ret .= render_section($section[1], $section[0], $permission);
 	}
 
 	my @buttons;
@@ -125,28 +120,26 @@ sub render_tabs($$) {
 				   ["submit", $text{'manual_save'}];
 
 	$ret .= ui_form_end(\@buttons);
-	$ret .= ui_tabs_end();
 
 	return $ret;
 }
 
-sub render_tab($$) {
-	my $tab = shift;
+sub render_section($$) {
+	my $section = shift;
 	my $title = shift;
 	my $permission = shift;
 
 	my $ret = "";
-	$ret .= ui_tabs_start_tab("tabname", $title);
 
 	my $started;
-	foreach my $item (@{$tab}) {
+	foreach my $item (@{$section}) {
 		if (ref($item) eq "HASH") {
 			if ($started) {
 				$ret .= ui_table_end();
 			}
 
 			my %item_hash = %{$item};
-			$ret .= ui_table_start($text{'tab_sub_title_' . $item_hash{'title'}}, "width=100%", 2);
+			$ret .= ui_table_start($text{'index_title_' . $title}, "width=100%", 2);
 			$started = 1;
 			next;
 		}
@@ -159,7 +152,6 @@ sub render_tab($$) {
 		}
 	}
 	$ret .= ui_table_end();
-	$ret .= ui_tabs_end_tab("tabname", $title);
 
 	return $ret;
 }

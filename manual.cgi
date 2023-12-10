@@ -6,12 +6,12 @@ use strict;
 
 &ReadParse();
 
-use vars qw/%text $tabs %in/;
+use vars qw/%text %in/;
 use libvsftpdconfig::HtmlUICreator;
 use libvsftpdconfig::ConfigManager;
 use libvsftpdconfig::Util;
 
-our $tabs = [
+our $sections = [
 	['logging',
 	[
 		{'title'=>'logs'},
@@ -179,6 +179,6 @@ foreach my $opt (@perms) {
 print ui_radio('permission', $permission , \@perm_opts);
 print ui_form_end([ ['select', $text{'manual_select_option'}] ]);
 
-print HtmlUICreator::render_tabs($tabs, "logging");
+print HtmlUICreator::render_sections($sections, "logging");
 
 ui_print_footer(undef, $text{'return_text'});
