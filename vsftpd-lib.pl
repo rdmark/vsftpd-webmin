@@ -15,6 +15,8 @@ init_config();
 
 %access = get_module_acl();
 
+@EXPORT = qw($tabs);
+
 sub get_vsftpd_pid() {
 	return find_byname($config{'vsftpd_path'});
 }
