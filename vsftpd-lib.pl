@@ -37,7 +37,7 @@ sub restart() {
 	return "<pre>$out</pre>" if ($?);
 }
 
-sub kill() {
+sub pkill() {
 	# regex matches the path itself if it contains no / or the last element in a path
 	$config{'vsftpd_path'} =~ m!^((([^/])+)|(.*/([^/]+)))$!;
 	my $cmd = $2 . $5; # either one of these contains something
