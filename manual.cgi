@@ -6,7 +6,7 @@ use strict;
 
 &ReadParse();
 
-use vars qw/%text $tabs %in/;
+use vars qw/%text %in/;
 use libvsftpdconfig::HtmlUICreator;
 use libvsftpdconfig::ConfigManager;
 use libvsftpdconfig::Util;

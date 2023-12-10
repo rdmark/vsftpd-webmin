@@ -18,7 +18,7 @@
 # Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 
 use strict;
-use vars qw(%text $tabs %config);
+use vars qw(%text %config);
 use libvsftpdconfig::ConfigManager;
 use libvsftpdconfig::Util;
 
