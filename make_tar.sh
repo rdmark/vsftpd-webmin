@@ -17,7 +17,7 @@ name="vsftpd"
 stamp=`date +%Y-%m-%d`
 tarball="$name-$stamp.wbm.gz"
 
-files="*.cgi *.pl *.info docs/ help/ images/ lang/ libvsftpdconfig/ COPYING config defaultacl vsftpd_pam_d_template"
+files="*.cgi *.pl *.info *.md docs/ help/ images/ lang/ libvsftpdconfig/ COPYING config defaultacl vsftpd_pam_d_template"
 
 echo "Creating distribution tarball $tarball ..."
 
